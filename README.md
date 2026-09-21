@@ -8,6 +8,51 @@ Dreaming is a private, local-first dream-memory journal built with Flutter for w
 - Dream content stays in local device storage.
 - One Flutter codebase supports Android, iOS, and web.
 
+## Tech stack
+
+| Layer | Technology | Version |
+|-------|------------|---------|
+| Framework | Flutter | 3.35.4 (stable channel) |
+| Language | Dart | 3.9.2 |
+| App version | — | 0.1.0 |
+| State management | `provider` | 6.1.5+1 |
+| Local storage | `shared_preferences` | 2.5.5 (schema version 1) |
+| Unique IDs | `uuid` | 4.6.0 |
+| Date formatting | `intl` | 0.19.0 |
+| CSV export | `csv` | 6.0.0 |
+| File sharing/download | `share_plus` | 10.1.4 |
+| File paths | `path_provider` | 2.1.5 |
+| Linting | `flutter_lints` | 5.0.0 |
+| Testing | `flutter_test` (SDK) | — |
+
+Additional platform details:
+- Android: AGP 8.9.1, Kotlin 2.1.0, Gradle 8.12, Java 11
+- iOS/macOS: native Swift/Kotlin runners scaffolded
+- Windows/Linux: desktop runners scaffolded (functional locally)
+- Web: PWA manifest and index.html retain stock Flutter defaults
+
+## Getting started
+
+Prerequisites:
+- Flutter SDK 3.35+ (Dart 3.9.2 included)
+- Android Studio / VS Code with Flutter extensions for mobile development
+- Chrome for web development
+
+Setup:
+```bash
+flutter pub get
+flutter run -d chrome       # web
+flutter run -d windows      # Windows desktop
+flutter run -d <device-id>  # connected Android/iOS device
+```
+
+No accounts, backend, environment variables, or database setup required — the app is fully local-first.
+
+## Platform support
+
+- **Primary**: Android, iOS, Web
+- **Desktop scaffolding**: Windows, Linux, macOS runners exist and build locally; not yet feature-complete
+
 ## Features
 
 - Yearly GitHub-style heatmap with correct weekday alignment, leap-year support, future-date handling, and year navigation.
@@ -82,3 +127,14 @@ Tests cover serialization/deserialization, older-data tolerance, CRUD behavior, 
 - Theme follows the system theme; an explicit in-app theme preference can be added later.
 - Export relies on platform sharing/downloading capabilities rather than a custom file picker.
 - Integration tests can be expanded with a real app restart once platform runners are configured in CI.
+
+## Screenshots (placeholder)
+
+<!-- TODO: add heatmap view screenshot -->
+<!-- TODO: add editor & search screenshots -->
+<!-- TODO: add settings/export screenshots -->
+
+## Related docs
+
+- Product specification: [`dreaming_agent_product_prompt(1).md`](dreaming_agent_product_prompt\(1\).md) — authoritative product build spec (UX flows, data model, testing matrix)
+- Run configuration: IntelliJ/Android Studio run config in `.idea/runConfigurations/main.dart.xml`
